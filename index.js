@@ -13,22 +13,22 @@ function cola() {
 
   function files(index) {
     const localPaths = [
-      "/assets2/Image3.jpg",
-      "/assets2/Image4.jpg",
-      "/assets2/Image5.jpg",
-      "/assets2/Image6.jpg",
-      "/assets2/Image7.jpg",
-      "/assets2/Image8.jpg",
-      "/assets2/Image9.jpg",
-      "/assets2/Image10.jpg",
-      "/assets2/Image11.jpg",
-      "/assets2/Image12.jpg",
-      "/assets2/Image13.jpg",
-      "/assets2/Image14.jpg",
-      "/assets2/Image15.jpg",
-      "/assets2/Image16.jpg",
-      "/assets2/Image17.jpg",
-      "/assets2/Image18.jpg",
+      "./assets2/Image3.jpg",
+      "./assets2/Image4.jpg",
+      "./assets2/Image5.jpg",
+      "./assets2/Image6.jpg",
+      "./assets2/Image7.jpg",
+      "./assets2/Image8.jpg",
+      "./assets2/Image9.jpg",
+      "./assets2/Image10.jpg",
+      "./assets2/Image11.jpg",
+      "./assets2/Image12.jpg",
+      "./assets2/Image13.jpg",
+      "./assets2/Image14.jpg",
+      "./assets2/Image15.jpg",
+      "./assets2/Image16.jpg",
+      "./assets2/Image17.jpg",
+      "./assets2/Image18.jpg",
     ];
 
     return localPaths[index];
@@ -117,7 +117,7 @@ cola();
 
 function textAnimation() {
   const text = document.querySelectorAll(".text");
-  
+
   let tl = gsap.timeline({
     defaults: { ease: "SlowMo.easeOut" },
     scrollTrigger: {
