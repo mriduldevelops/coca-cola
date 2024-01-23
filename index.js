@@ -1,5 +1,6 @@
 function cola() {
   const canvas = document.querySelector("canvas");
+  const part3 = document.querySelector("#part3");
   var context = canvas.getContext("2d");
 
   canvas.width = window.innerWidth;
@@ -80,24 +81,24 @@ function cola() {
     ease: "none",
     scrollTrigger: {
       scrub: 2,
-      trigger: "canvas",
+      trigger: canvas,
       start: "top 0%",
       end: "bottom 0%",
     },
     onUpdate: render,
   });
 
-  gsap.to("canvas", {
+  gsap.to(canvas, {
     scrollTrigger: {
       scrub: 2,
-      trigger: "#part3",
+      trigger: part3,
       start: "bottom 0%",
       ease: "none",
     },
   });
 
   ScrollTrigger.create({
-    trigger: "#part3",
+    trigger: part3,
     pin: true,
     start: "bottom 100%",
   });
@@ -105,23 +106,29 @@ function cola() {
 
 cola();
 
-
 // var loader = document.querySelector("#loader");
 // setTimeout(function(){
 //   loader.style.top = "-100%"
 // }, 9000);
+(function () {
+  const loader = document.querySelector("#loader");
+  gsap.to(loader, { y: "-100%", delay: 7, duration: 3 });
+})();
 
-gsap.to("#loader",{y: "-100%", delay: 7, duration: 3});
-
-function textAnimation(){
-  let tl = gsap.timeline({defaults: {ease: "SlowMo.easeOut"},scrollTrigger: {
-    trigger: "#part2",
-    start: "30% 50%",
-    end: "50% 50%",
-  }});
-  tl.to(".text", {y: 0, duration: 0.7, stagger: 0.2});
+function textAnimation() {
+  const text = document.querySelectorAll(".text");
+  
+  let tl = gsap.timeline({
+    defaults: { ease: "SlowMo.easeOut" },
+    scrollTrigger: {
+      trigger: "#part2",
+      start: "30% 50%",
+      end: "50% 50%",
+    },
+  });
+  tl.to(text, { y: 0, duration: 0.7, stagger: 0.2 });
 }
-textAnimation()
+textAnimation();
 // function camera() {
 //   const canvas = document.querySelector("canvas");
 //   const context = canvas.getContext("2d");
